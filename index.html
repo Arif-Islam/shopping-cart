@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="https://kit.fontawesome.com/7308245897.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        sectionColor: '#F6F5FA'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 class="text-3xl font-semibold text-center my-12">My Shopping Cart</h1>
+    <section class="bg-sectionColor py-14 mx-4 lg:mx-12 xl:mx-60 rounded-lg">
+        <!-- iphone card -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 bg-white gap-3 mx-4 md:mx-8 lg:mx-16 py-4 rounded-lg mb-5 shadow-sm shadow-gray-200">
+            <div class="flex items-center md:ml-4 lg:ml-6 xl:ml-8 2xl:ml-14">
+                <img width="115" src="images/product-1.png" alt="">
+                <h3 class="text-xl font-medium">iPhone 11 128GB Black</h3>
+            </div>
+            <div class="flex justify-between md:justify-evenly items-center">
+                <div class="flex items-center mr-6 ml-4 ">
+                    <svg id="phone-minus" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M18 12H6" />
+                    </svg>
+                    <input id="phone-input"
+                        class="font-semibold text-lg bg-gray-200 w-12 text-center border-2 rounded border-gray-400"
+                        type="text" value="1">
+                    <svg id="phone-plus" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                </div>
+                <div class="flex items-center">
+                    <h2 class="text-2xl font-small">$<span id="phone-price">1219</span></h2>
+                </div>
+                <div class="flex items-center mr-6 md:mr-0 lg:-mr-8 xl:mr-0">
+                    <img width="25" src="images/remove.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- iphone case card -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 bg-white gap-3 mx-4 md:mx-8 lg:mx-16 py-4 rounded-lg mb-5 shadow-sm shadow-gray-200">
+            <div class="flex items-center md:ml-4 lg:ml-6 xl:ml-8 2xl:ml-14">
+                <img width="115" src="images/product-2.png" alt="">
+                <h3 class="text-xl font-medium">iPhone 11 Silicone Case - Black</h3>
+            </div>
+            <div class="flex justify-between md:justify-evenly items-center">
+                <div class="flex items-center mr-6 ml-4 ">
+                    <svg id="case-minus" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M18 12H6" />
+                    </svg>
+                    <input id="case-input"
+                        class="font-semibold text-lg bg-gray-200 w-12 text-center border-2 rounded border-gray-400"
+                        type="text" value="1">
+                    <svg id="case-plus" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                </div>
+                <div class="flex items-center">
+                    <h2 class="text-2xl font-small">$<span id="case-price">59</span></h2>
+                </div>
+                <div class="flex items-center mr-6 md:mr-0 lg:-mr-8 xl:mr-0">
+                    <img width="25" src="images/remove.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- total cost card -->
+        <div class="bg-white mx-4 md:mx-8 lg:mx-16 py-4 rounded-lg mb-5 shadow-sm shadow-gray-200">
+            <div class="flex items-center justify-between mb-1 mx-5 md:mx-10 lg:mx-11 xl:mx-14 2xl:mx-20">
+                <h2 class="text-xl font-semibold">Subtotal:</h2>
+                <h2 class="text-xl font-semibold">$<span id="sub-total">1278</span></h2>
+            </div>
+            <div class="flex items-center justify-between mb-1 mx-5 md:mx-10 lg:mx-11 xl:mx-14 2xl:mx-20">
+                <h2 class="text-xl font-semibold">Tax:</h2>
+                <h2 class="text-xl font-semibold">$<span id="tax-amount">0</span></h2>
+            </div>
+            <div class="flex items-center justify-between mb-1 mx-5 md:mx-10 lg:mx-11 xl:mx-14 2xl:mx-20">
+                <h2 class="text-xl font-semibold">Total:</h2>
+                <h2 class="text-xl font-semibold">$<span id="total-price">1278</span></h2>
+            </div>
+        </div>
+        <div class="flex justify-end mt-10 mr-4 md:mr-8 lg:mr-16">
+            <button class="bg-green-500 hover:bg-green-700 text-xl py-3 px-5 rounded-md text-white font-normal">Check
+                Out</button>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
